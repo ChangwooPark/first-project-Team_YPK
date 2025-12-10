@@ -65,9 +65,9 @@ npm install  # (Node.jsの場合)
 
 ```bash
 # .env ファイルの例
-DB_HOST=localhost:27017
-DB_NAME=task_manager_db
-PORT=3000
+DB_HOST=localhost:27017 #(自分の環境)
+DB_NAME=task_manager_db #(自分の環境)
+PORT=3000               #(自分の環境)
 ```
 
 ### 4. 起動方法
@@ -145,3 +145,4 @@ npm run dev
 * 開発用ブランチ: develop (最新の開発版)
 * 機能ブランチ: feature/機能名 (個人作業用。作業終了後、developへPRを出す)
 * コミットメッセージ: プレフィックス (feat:, fix:, docs:) を必ず使用してください。
+* mainブランチはdevelopでテストが完了してない限りmergeしない。
