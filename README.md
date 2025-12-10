@@ -61,6 +61,7 @@ npm install  # (Node.jsの場合)
 ### 3. 環境設定ファイル (.env)
 
 ローカルでDB接続やAPIキーなどの機密情報を設定するため、プロジェクトのルートに .env ファイルを作成してください。
+** [※ .envのファイル構成を修正した場合には .env.example　にその内容を更新する] **
 
 ```bash
 # .env ファイルの例
@@ -70,11 +71,62 @@ PORT=3000
 ```
 
 ### 4. 起動方法
+> ** 以下の処理はプロジェクトルートフォルダーを基準とします。　**
 
-以下のコマンドでアプリケーションを起動できます。
+1. 依存性(Dependency) Package　install
+* Backend Dependency install
 
 ```bash
-npm run start
+# CloneしたプロジェクトのFolderまで移動後
+cd ./backend
+npm install
+```
+
+* Frontend Dependency install
+
+```bash
+# CloneしたプロジェクトのFolderまで移動後
+cd ./frontend
+npm install
+```
+
+2. 環境変数ファイルの準備
+* Backend .env setup
+- 中身は .env.exampleに合わせる
+
+```bash
+# CloneしたプロジェクトのFolderまで移動後
+cd ./backend
+touch .env # macOS/Linux
+type nul > .env # Window CMD
+```
+
+* Frontend .env setup
+- 中身は .env.exampleに合わせる
+
+```bash
+# CloneしたプロジェクトのFolderまで移動後
+cd ./frontend
+touch .env # macOS/Linux
+type nul > .env # Window CMD
+```
+
+3. プロジェクト実行方法
+* Backendサーバー起動
+
+```bash
+cd ./backend
+
+# サーバー起動 (nodemon使用)
+npm run dev
+```
+
+* Frontend App 起動
+```bash
+cd ./frontend
+
+# サーバー起動 (nodemon使用)
+npm run dev
 ```
 
 ## 貢献者
