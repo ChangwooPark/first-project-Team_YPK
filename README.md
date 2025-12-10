@@ -92,7 +92,7 @@ npm install
 
 2. 環境変数ファイルの準備
 * Backend .env setup
-- 中身は .env.exampleに合わせる
+ * 中身は .env.exampleに合わせる
 
 ```bash
 # CloneしたプロジェクトのFolderまで移動後
@@ -102,7 +102,7 @@ type nul > .env # Window CMD
 ```
 
 * Frontend .env setup
-- 中身は .env.exampleに合わせる
+ * 中身は .env.exampleに合わせる
 
 ```bash
 # CloneしたプロジェクトのFolderまで移動後
