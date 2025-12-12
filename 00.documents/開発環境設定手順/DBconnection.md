@@ -184,4 +184,4 @@ app.get('/', (req: Request, res: Response) => {
 npm run dev
 ```
 
-![実行結果](/Users/cw-park/Team_YPK/first-project-Team_YPK/00.documents/Images/DBconnection/DBconnection_1.png)
+![実行結果](../Images/DBconnection/DBconnection_1.png)
