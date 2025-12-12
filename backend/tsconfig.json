@@ -3,11 +3,13 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
-    "rootDir": "./src",   /* 소스 코드는 src 폴더에 */
-    "outDir": "./dist",   /* 빌드 결과물은 dist 폴더에 */
+    "rootDir": "./src",   /* ソースコードは　src フォルダーに */
+    "outDir": "./dist",   /* Build 結果物は dist フォルダーに */
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "experimentalDecorators": true, /* デコレーター文法利用を許可　*/  
+    "emitDecoratorMetadata": true, // デコレーターがType情報をデザインタイムにImportすることを許可 (TypeORMに必須)
   }
 }
