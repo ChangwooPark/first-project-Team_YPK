@@ -5,6 +5,9 @@ import { DataSource } from 'typeorm';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+// DB syncの設定を .envで管理する。
+const isSynchronized = process.env.DB_SYNCHRONIZE === 'true';
+
 // TypeORMが利用するDB Connection情報 (DataSource)定義
 export const AppDataSource = new DataSource({
     // 1. 利用する DB Type
@@ -22,6 +25,6 @@ export const AppDataSource = new DataSource({
     entities: [__dirname + "/entity/*.ts"],
 
     // 4. DB Connectionの際、Scheme自動生成と同期 (Dev環境で使用、 Deployの際にはfalse)
-    synchronize: true, 
+    synchronize: isSynchronized, 
     logging: false,
 });

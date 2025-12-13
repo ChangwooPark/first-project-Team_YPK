@@ -7,13 +7,17 @@ export class User {
     @PrimaryGeneratedColumn()
     id!: number;
 
+    // アカウントは必須入力、重複不可
+    @Column({ nullable:false, unique:true })
+    userAccount!: string;
+
     // @Column: 'firstName' カラムを生成 
-    @Column()
+    @Column({ nullable:false })
     firstName!: string;
 
-    @Column()
+    @Column({ nullable:false })
     lastName!: string;
 
-    @Column()
-    age!: number;
+    @Column({ nullable:false })
+    password!: string;
 }
