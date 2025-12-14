@@ -13,8 +13,6 @@
 ---
 ### 2. エンティティ-関係ダイアグラム (ERD)
 
-![ERD](../Images/DB設計書/ERD.png)
-
 ```mermaid
 erDiagram
     User ||--o{ Workspace : created_by
@@ -157,8 +155,6 @@ erDiagram
 
 ---
 ### 2. 엔티티-관계 다이어그램 (ERD)
-
-![ERD](../Images/DB設計書/ERD.png)
 
 ```mermaid
 erDiagram
