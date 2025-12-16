@@ -1,5 +1,10 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
+import { User } from './entity/User';
+import { Workspace } from './entity/Workspace';
+import { WorkspaceMember } from './entity/WorkspaceMember';
+import { TicketStatus } from './entity/TicketStatus';
+import { Ticket } from './entity/Ticket';
 
 // .env ファイルを読み取るためのdotenv設定
 import * as dotenv from 'dotenv';
@@ -22,7 +27,7 @@ export const AppDataSource = new DataSource({
     
     // 3. Entity ファイルの場所
     // **Path**: プロジェクトRoot(backend)基準で'src/entity/'フォルダーの中にある全ての.tsファイルを見つけ出します。
-    entities: [__dirname + "/entity/*.ts"],
+    entities: [ User, Workspace, WorkspaceMember, TicketStatus, Ticket],
 
     // 4. DB Connectionの際、Scheme自動生成と同期 (Dev環境で使用、 Deployの際にはfalse)
     synchronize: isSynchronized, 
