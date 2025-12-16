@@ -2,6 +2,7 @@
 
 import { Router, Request, Response } from "express";
 import { authService } from '../services/AuthService';
+import { login } from '../controllers/auth.controller'
 
 const router = Router()
 
@@ -38,13 +39,16 @@ router.post('/signup', async (req: Request, res: Response) => {
         // 4. Service階層でthrowしたエラーの処理
         if(error.message === "UserAccountAlreadyExist"){
             return res.status(409).send({ // HTTP status code 409 => Client Error (4xx), Clientの要請がサーバーの現在リソース状態と矛盾していることで完了不可
-                message: "User Account Already Exist."
+                message: "User Accountが既に存在しています。"
             })
         }
 
         console.error('Signup Error:',error);
-        return res.status(500).send({ message: "Failed to register user"})
+        return res.status(500).send({ message: "User登録に失敗しました。"})
     }
 })
+
+// Post /auth/login Endpoint (AU-02)
+router.post('/login', login)
 
 export default router

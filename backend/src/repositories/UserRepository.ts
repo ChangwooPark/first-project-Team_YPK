@@ -6,8 +6,11 @@ import { User } from "../entity/User"
 export const UserRepository = AppDataSource.getRepository(User).extend({
 
     // アカウント名でUserテーブルのデータを取り出す
-    findByAccount(userAccount: string){
-        return this.findOneBy({ userAccount })
+    async findByAccount(userAccount: string){
+        return this.findOne({
+            where : { userAccount },
+            select : ['id', 'userAccount', 'password', 'firstName', 'lastName', 'createdAt', 'updatedAt']
+        })
     }
 
     // save, create, find などはAppDataSource.getRepository(User)にすでに含まれている。
