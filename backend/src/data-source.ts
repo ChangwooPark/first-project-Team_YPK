@@ -31,5 +31,5 @@ export const AppDataSource = new DataSource({
 
     // 4. DB Connectionの際、Scheme自動生成と同期 (Dev環境で使用、 Deployの際にはfalse)
     synchronize: isSynchronized, 
-    logging: false,
+    logging: true,
 });

@@ -3,6 +3,7 @@
 import { Router, Request, Response } from "express";
 import { authService } from '../services/AuthService';
 import { login } from '../controllers/auth.controller'
+import { verifyToken } from '../middlewares/auth.middleware'
 
 const router = Router()
 
@@ -50,5 +51,15 @@ router.post('/signup', async (req: Request, res: Response) => {
 
 // Post /auth/login Endpoint (AU-02)
 router.post('/login', login)
+
+
+// auth.MiddleWare動作テスト
+router.get('/auth-test', verifyToken, (req: any, res: Response) => {
+    return res.json({ 
+        message : "認証成功",
+        decodedUserId: req.userId
+    })
+})
+
 
 export default router
