@@ -60,6 +60,8 @@ npm install  # (Node.jsの場合)
 
 ### 3. 環境設定ファイル (.env)
 
+* Backend
+
 ローカルでDB接続やAPIキーなどの機密情報を設定するため、プロジェクトのルートに .env ファイルを作成してください。
 **[※ .envのファイル構成を修正した場合には .env.example　にその内容を更新する]**
 
@@ -69,6 +71,16 @@ DB_HOST=localhost:27017 #(自分の環境)
 DB_NAME=task_manager_db #(自分の環境)
 PORT=3000               #(自分の環境)
 ```
+
+<br>
+
+* Frontend
+
+```bash
+# .env.local ファイルの例
+NEXT_PUBLIC_API_URL=http://localhost:4000
+```
+
 
 ### 4. 起動方法
 > ** 以下の処理はプロジェクトルートフォルダーを基準とします。　**
@@ -135,7 +147,7 @@ npm run dev
 
 | 指名 | GitHub ID | 担当 |
 | :--- | :--- | :--- |
-| **朴** | pcwjapan@gmail.com | (※未定) |
+| **朴** | pcwjapan@gmail.com | 開発環境設定、ログイン、会員登録 |
 | **山田** | yamatatsu-gh | (※未定) |
 | **兼子** | - | (※未定) |
 
