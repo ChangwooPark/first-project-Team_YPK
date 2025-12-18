@@ -53,13 +53,13 @@ router.post('/signup', async (req: Request, res: Response) => {
 router.post('/login', login)
 
 
-// auth.MiddleWare動作テスト
-router.get('/auth-test', verifyToken, (req: any, res: Response) => {
-    return res.json({ 
-        message : "認証成功",
-        decodedUserId: req.userId
-    })
-})
+// // auth.MiddleWare動作テスト
+// router.get('/auth-test', verifyToken, (req: any, res: Response) => {
+//     return res.json({ 
+//         message : "認証成功",
+//         decodedUserId: req.userId
+//     })
+// })
 
 
 export default router
