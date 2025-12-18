@@ -35,6 +35,9 @@ export const login = async ( req: Request, res: Response) => {
         if(error.message == "InvalidCredentials"){
             return res.status(401).json({ message: "IDまたはPasswordが不一致しています。"})
         }
+        else if(error.message == "InvalidJWTSECRET"){
+            return res.status(500).json({ message: "ログイン処理中エラーが発生しました。"})
+        }
 
         console.error('Login Error: ', error)
         return res.status(500).json({ message: "ログイン処理中エラーが発生しました。" })

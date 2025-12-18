@@ -9,7 +9,7 @@ import { User } from '../entity/User';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const JWT_SECRET = process.env.JWT_SECRET || "SUPER_SECURE_DEFAULT_KEY_FOR_JWT";
+const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_EXPIRES_IN = '1h'; //token有効時間 
 
 // Clientから必ず送信すべきのField: userAccount, password
@@ -63,6 +63,11 @@ export class AuthService {
      * @returns JWTトークンとユーザーObj
      */
     public async login(userAccount: string, password: string): Promise<{token: string, user: User}> {
+        
+        if(!JWT_SECRET){
+            throw new Error('InvalidJWTSECRET')
+        }
+        
         // 1. UserをDBから検出
         const user = await UserRepository.findByAccount(userAccount)
 
