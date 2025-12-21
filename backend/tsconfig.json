@@ -1,8 +1,8 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "ES2020",
+    "module": "CommonJS",
     "rootDir": "./src",   /* ソースコードは　src フォルダーに */
     "outDir": "./dist",   /* Build 結果物は dist フォルダーに */
     "esModuleInterop": true,

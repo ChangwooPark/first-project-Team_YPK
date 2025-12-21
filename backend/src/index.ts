@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { AppDataSource } from './data-source'; // TypeORM DataSoureのインポート
+import authRouter from './routes/auth';
 
 // .envファイルを読んで環境変数設定
 import * as dotenv from 'dotenv';
@@ -16,12 +17,15 @@ const PORT = process.env.PORT || 4000;
 const initalizeServer = async () => {
   try{
     // Try DB Connection
-    await AppDataSource.initialize()
-    console.log(`[O] Data Sourceの初期化に成功。`)
+    await AppDataSource.initialize();
+    console.log(`[O] Data Sourceの初期化に成功。`);
+
+    // authRouter登録: /authのパスに来る全てのRequestをauthRouterで処理
+    app.use('/auth', authRouter);
 
     // DB Connection成功後、Expressサーバー起動
     app.listen(PORT, () =>{
-      console.log(`[O] サーバー起動中... http://localhost:${PORT}`)
+      console.log(`[O] サーバー起動中... http://localhost:${PORT}`);
     })
 
   }catch(error){
