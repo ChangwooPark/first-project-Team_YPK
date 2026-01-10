@@ -158,4 +158,3 @@ npm run dev
 * 機能ブランチ: feature/機能名 (個人作業用。作業終了後、developへPRを出す)
 * コミットメッセージ: プレフィックス (feat:, fix:, docs:) を必ず使用してください。
 * mainブランチはdevelopでテストが完了してない限りmergeしない。
-* test
